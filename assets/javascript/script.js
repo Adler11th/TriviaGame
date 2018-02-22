@@ -14,7 +14,13 @@ $(document).ready(function(){
         new QA("How many days in leap year?","364","365", "366", "366"),
         new QA("How many planets in the Solar System?","eleven","nine", "seven", "nine"),
         new QA("What is Jupiters order from the Sun?", "fifth", "third", "first", "fifth"),
-        new QA("How long the day on saturn?", "12h 14min", "10h 42m","8h 51m","10h 42m")
+        new QA("How long is the day on the Saturn?", "12h 14m", "10h 42m","8h 51m","10h 42m"),
+        new QA("What is the heaviest object in Solar System?", "Sun", "Earth", "Jupiter", "Sun"),
+        new QA("Which on is the hottest planet in Solar system?", "Mercury", "Venus", "Mars", "Venus"),
+        new QA("Which planet in the Solar System has rings surrounding it?", "Saturn", "Pluto", "Mars", "Saturn"),
+        new QA("Which planet is smaller than the Earth's moon?", "Mecury", "Mars", "Pluto", "Pluto"),
+        new QA("How many years it takes for Neptune to make one orbit around the Sun?", "187.5 yrs", "164.7 yrs", "123.2 yrs","164.7 yrs"),
+        new QA("How long it takes for light from the Sun to travel to Earth?", "5.2 min", "6.8 min", "8.3 min", "8.3 min")
     ]
 
     var QUESTION_TIMER; //timer gives 30 sec to answer the question
@@ -85,7 +91,7 @@ $(document).ready(function(){
             }
             QA_TIMER = setTimeout( function(){
                 gameLoop(++index);
-            },5*1000)
+            },3*1000)
         });
     }
 
@@ -100,7 +106,7 @@ $(document).ready(function(){
             }, 10 * 1000);
             QA_TIMER = setTimeout(function () {
                 gameLoop(++index);
-            }, 15 * 1000);
+            }, 13 * 1000);
         } else {
             clearTimeout(QA_TIMER);
             console.log("gameLoop is over");
@@ -119,10 +125,11 @@ $(document).ready(function(){
     
     // main()
     //=======
-
-    $(".main").html("<input type = 'button' id = 'start-game' value = 'Start Game'>");
+    $(".main").append("<div id='welcome'>Welcome to Trivia game! <p>You will be given 10 seconds to answer each question.</p><p>Have fun!</p></div>");
+    $(".main").append("<input type = 'button' id = 'start-game' value = 'Start Game'>");
 
     $(document).on("click", "#start-game", function(){
+        $("header").after(`<div id='clock'>Time left: 10 sec</div>`);
         gameLoop(0);
     })
     $(document).on("click",".reset",function(){
