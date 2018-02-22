@@ -47,7 +47,7 @@ $(document).ready(function(){
         CLOCK = setInterval(function () {
             if (seconds >= 0) {
                 $("#clock").remove();
-                $("header").after(`<div id = 'clock'>Time left: ${seconds}<div>`);
+                $("header").after(`<div id='clock'>Time left: ${seconds} sec</div>`);
                 seconds--;
             }else{
                 clearInterval(CLOCK);
@@ -131,6 +131,4 @@ $(document).ready(function(){
         WRONG = 0;
         gameLoop(0);
     })
-
-
 })
