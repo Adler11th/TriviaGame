@@ -9,4 +9,4 @@ In the end of the game, the stats page will be displayed showing the number of q
 
 Game made logic made utilizing javascript/jQuery timing events and timers.
 
-Enjoy the game here: https://adler11th.github.io/TriviaGame/
+Enjoy the game here: https://maximgalyliak.github.io/TriviaGame/
